@@ -21,7 +21,8 @@ function displayMessage(){
 
 displayMessage();
 var today = moment();
-$('currentDay').text(today.format('MMM Do YYYY, h:mm a'));
+$('#currentDay').text(today.format('MMM Do YYYY, h:mm a'));
+
 
 function trackTime(){
     var hourNow = moment().hour();
