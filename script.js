@@ -23,4 +23,21 @@ displayMessage();
 var today = moment();
 $('currentDay').text(today.format('MMM Do YYYY, h:mm a'));
 
-function trackTime()
+function trackTime(){
+    var hourNow = moment().hour();
+
+    $('.time-block').each(function() {
+        var hourBlock = parseInt($(this).attr('id').split('hr')[1]);
+        console.log(hourBlock);
+        console.log(hourNow);
+        if (hourBlock <hourNow){
+            $(this).addClass('past')
+        }
+        else if (hourBlock===hourNow){
+            $(this).removeClass('past');
+            $(this).removeClass('present');
+            $(this).addClass('future')
+        }
+    });
+}
+trackTime();
